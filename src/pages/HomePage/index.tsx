@@ -4,8 +4,16 @@ import Header from "../../components/HomePage/Header";
 import { IoIosShareAlt } from "react-icons/io";
 import { Main } from "./style";
 import { Link } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { DashboardContext } from "../../contexts/DashboardProvider";
 
 const HomePage = () => {
+  const { setPage } = useContext(DashboardContext);
+
+  useEffect(() => {
+    setPage(0);
+  }, []);
+
   return (
     <>
       <Header />

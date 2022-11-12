@@ -1,5 +1,5 @@
 import Header from "../../components/HomePage/Header";
-import Characters from "../../components/Characters";
+import Characters from "../../components/Characters/ListCharacters";
 
 const ListCharacters = () => {
   return (

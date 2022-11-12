@@ -13,6 +13,12 @@ export interface ICharacter {
   gender: string;
   homeworld: string;
   films: string[];
+  species: [];
+  vehicles: [];
+  starships: [];
+  created: string;
+  edited: string;
+  url: string;
 }
 
 export interface IPlanets {
@@ -32,9 +38,34 @@ export interface IPlanets {
   url: string;
 }
 
+export interface IShips {
+  name: string;
+  model: string;
+  manufacturer: string;
+  cost_in_credits: string;
+  length: string;
+  max_atmosphering_speed: string;
+  crew: string;
+  passengers: string;
+  cargo_capacity: string;
+  consumables: string;
+  hyperdrive_rating: string;
+  MGLT: string;
+  starship_class: string;
+  pilots: [];
+  films: [];
+  created: string;
+  edited: string;
+  url: string;
+}
+
 interface IDashboardContext {
-  features: ICharacter[] | IPlanets[];
-  setFeatures: React.Dispatch<React.SetStateAction<ICharacter[] | IPlanets[]>>;
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  handleOpen: () => void;
+  handleClose: () => void;
 }
 
 export const DashboardContext = createContext<IDashboardContext>(
@@ -42,10 +73,17 @@ export const DashboardContext = createContext<IDashboardContext>(
 );
 
 const DashboardProvider = ({ children }: IProps) => {
-  const [features, setFeatures] = useState<ICharacter[] | IPlanets[]>([]);
+  const [page, setPage] = useState(0);
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
-    <DashboardContext.Provider value={{ features, setFeatures }}>
+    <DashboardContext.Provider
+      value={{ page, setPage, open, setOpen, handleOpen, handleClose }}
+    >
       {children}
     </DashboardContext.Provider>
   );

@@ -58,13 +58,15 @@ export const TopHeader = styled.header<IClickDropdown>`
 
       z-index: 1;
 
-      button {
+      a {
         color: white;
         background-color: black;
 
         padding: 0.625rem;
 
         border-radius: 5px;
+
+        font-size: .75rem
       }
     }
 

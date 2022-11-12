@@ -14,7 +14,7 @@ export const Main = styled.main`
   justify-content: center;
 `;
 
-export const Character = styled.ul`
+export const Planet = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -65,11 +65,13 @@ export const Character = styled.ul`
       color: white;
 
       cursor: pointer;
+      transition: all 0.5s ease-in-out;
     }
 
     a:hover {
       text-decoration: underline;
-      font-size: 11px;
+      font-size: 10.5px;
+      transition: all 0.5s ease-in-out;
     }
 
     &::before {

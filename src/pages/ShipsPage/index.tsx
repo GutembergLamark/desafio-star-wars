@@ -1,5 +1,5 @@
 import Header from "../../components/HomePage/Header";
-import Ships from "../../components/Ships";
+import Ships from "../../components/Ships/ListShips";
 
 const ListShips = () => {
   return (

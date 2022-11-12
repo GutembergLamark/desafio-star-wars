@@ -1,5 +1,5 @@
 import Header from "../../components/HomePage/Header";
-import Planets from "../../components/Planets";
+import Planets from "../../components/Planets/ListPlanets";
 
 const ListPlanets = () => {
   return (

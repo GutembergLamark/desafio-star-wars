@@ -1,14 +1,14 @@
 import api from ".";
 
-interface IGetCharacters {
+interface IGetPlanets {
   count: number;
   next: string | null;
   previous: string | null;
   results: [];
 }
 
-const getCharacters = async (page: number, limit = 10) => {
-  const response = await api.get<IGetCharacters>("/people", {
+const getPlanets = async (page: number, limit = 10) => {
+  const response = await api.get<IGetPlanets>("/planets", {
     params: {
       limit,
       page,
@@ -18,4 +18,4 @@ const getCharacters = async (page: number, limit = 10) => {
   return response.data;
 };
 
-export default getCharacters;
+export default getPlanets;
